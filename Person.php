@@ -2,8 +2,8 @@
 
 class Person
 {
-    public $name;
-    public $age;
+    private $name;
+    private $age;
 
     public function __construct($name,$age)
     {
@@ -11,18 +11,39 @@ class Person
         $this->age = $age;
     }
 
-    public function setAge($age){
+    public function getAge()
+    {
+        return $this->age;
 
+    }
+
+    public function setAge($age)
+    {
         if($age > 18){
             $this->age = $age;
+            return;
         }
         
         throw new Exception("This age is incorrect");
+    }
+
+    public function moreOneYear()
+    {
+        $this->addYears(1);
+    }
+
+    public function addYears($more)
+    {
+        $this->age += $more;
     }
 }
 
 $person = new Person('Sergio', 23);
 
-$person->setAge(15);
+// $person->setAge($person->getAge() + 1);
+$person->moreOneYear();
+$person->moreOneYear();
+$person->moreOneYear();
+
 
 var_dump($person);
