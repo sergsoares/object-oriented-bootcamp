@@ -13,8 +13,7 @@ class Person
 
     public function getAge()
     {
-        return $this->age;
-
+        return $this->age * 365;
     }
 
     public function setAge($age)
@@ -38,12 +37,11 @@ class Person
     }
 }
 
-$person = new Person('Sergio', 23);
+$person = new Person('Sergio', 30);
 
 // $person->setAge($person->getAge() + 1);
 $person->moreOneYear();
 $person->moreOneYear();
 $person->moreOneYear();
 
-
-var_dump($person);
+var_dump($person->getAge());
