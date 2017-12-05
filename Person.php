@@ -45,3 +45,4 @@ $person->moreOneYear();
 $person->moreOneYear();
 
 var_dump($person->getAge());
+var_dump($person->getAge());
