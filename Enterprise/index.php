@@ -2,12 +2,16 @@
 
 require('vendor/autoload.php');
 
-$sergio = new Acme\Person('Sergio');
-$carlos = new Acme\Person('Carlos');
+use Acme\Person;
+use Acme\Business;
+use Acme\Staff;
 
-$staff = new Acme\Staff();
+$sergio = new Person('Sergio');
+$carlos = new Person('Carlos');
 
-$business = new Acme\Business($staff);
+$staff = new Staff();
+
+$business = new Business($staff);
 
 $business->hire($sergio);
 $business->hire($carlos);
